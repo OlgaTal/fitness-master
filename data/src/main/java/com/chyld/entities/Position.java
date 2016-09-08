@@ -4,12 +4,13 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "positions")
 @Data
-public class Position {
+public class Position implements Serializable {
     private int id;
     private Run run;
     private float latitude;

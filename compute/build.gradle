@@ -1,0 +1,12 @@
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'compute'
+    version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    compile project(':data')
+    compile('org.springframework.boot:spring-boot-starter-amqp') // for rabbit mq
+    compile('org.springframework.boot:spring-boot-starter-web')
+}
