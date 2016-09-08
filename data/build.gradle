@@ -1,0 +1,18 @@
+apply plugin: 'spring-boot'
+
+jar {
+	baseName = 'data'
+	version = '0.0.1-SNAPSHOT'
+}
+
+// package is 'not startable': has no Application
+bootRepackage{
+	enabled = false
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')  // to have @JsonIgnore working
+	compile('org.springframework.boot:spring-boot-starter-security')	// for security interfaces the use inherit
+	compile('org.projectlombok:lombok')
+}
