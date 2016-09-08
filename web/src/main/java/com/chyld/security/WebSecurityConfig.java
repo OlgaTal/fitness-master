@@ -57,11 +57,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable().cors().and()
                 .authorizeRequests()
-                .antMatchers("/authenticate", "/users", "/runs/**", "/positions/**").permitAll()
+                .antMatchers("/authenticate", "/users").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .logout()
                 .permitAll();
+
 
         http.addFilterBefore(new JwtLoginFilter("/authenticate", jwtUtil, userService, authenticationManager()), UsernamePasswordAuthenticationFilter.class);
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
@@ -72,3 +73,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService).passwordEncoder(bcryptEncoder());
     }
 }
+
+//                .antMatchers("/authenticate", "/users", "/runs/**", "/positions/**").permitAll()

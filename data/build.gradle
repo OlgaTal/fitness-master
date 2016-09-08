@@ -14,5 +14,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')  // to have @JsonIgnore working
 	compile('org.springframework.boot:spring-boot-starter-security')	// for security interfaces the use inherit
+	compile('org.springframework.boot:spring-boot-starter-amqp')	// for rabbit mq
 	compile('org.projectlombok:lombok')
+	runtime('mysql:mysql-connector-java')
 }
