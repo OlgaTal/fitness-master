@@ -1,1 +1,1 @@
-# fitness-master
+# fitness-master - java - IntelliJ modules
